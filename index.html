@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Danay 💖</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+  }
+
+  .carta {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.9s;
+  }
+
+  .carta.abierta {
+    height: 420px;
+  }
+
+  .portada {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #c0392b;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .contenido {
+    opacity: 0;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.8s;
+  }
+
+  .carta.abierta .contenido {
+    opacity: 1;
+  }
+
+  .mensaje {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+  }
+
+  .corazon {
+    font-size: 32px;
+    margin-top: 15px;
+    animation: latido 1s infinite;
+  }
+
+  @keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<audio id="musica" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_8a8c9e9c77.mp3" type="audio/mpeg">
+</audio>
+
+<div class="carta" onclick="abrirCarta()">
+  <div class="portada">
+    💌 De Jhonatan <br> Para Danay 💌
+  </div>
+
+  <div class="contenido">
+    <div class="mensaje">
+      Danay,<br><br>
+      Desde que llegaste, mis días son más bonitos.
+      Cada momento contigo se siente especial
+      y no quería dejar pasar esta oportunidad.
+      <br><br>
+      ¿Te gustaría ser mi San Valentín? 💕
+    </div>
+    <div class="corazon">❤️</div>
+  </div>
+</div>
+
+<script>
+  function abrirCarta() {
+    document.querySelector('.carta').classList.add('abierta');
+    document.getElementById("musica").play();
+  }
+</script>
+
+</body>
+</html>
